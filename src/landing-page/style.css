@@ -1,0 +1,236 @@
+:root {
+  --brand: #0a2540;
+  --brand-2: #1a4480;
+  --accent: #ff6b35;
+  --accent-2: #e55a2b;
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --bg: #ffffff;
+  --bg-soft: #f6f8fb;
+  --border: #e4e7ec;
+  --radius: 12px;
+  --shadow: 0 4px 18px rgba(10, 37, 64, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--brand);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.brand .tld {
+  font-weight: 400;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+.phone-cta {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.phone-cta:hover { background: var(--accent-2); }
+
+main { max-width: 720px; margin: 0 auto; padding: 0 20px 60px; }
+
+.hero {
+  padding: 40px 0 32px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  color: var(--brand);
+  line-height: 1.15;
+}
+
+.hero .lede {
+  font-size: 17px;
+  color: var(--text-muted);
+  margin: 0 0 28px;
+}
+
+.primary-cta {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 107, 53, 0.35);
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+
+.primary-cta:hover { background: var(--accent-2); transform: translateY(-1px); }
+.primary-cta:active { transform: translateY(0); }
+
+.microcopy {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 12px 0 0;
+}
+
+.trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: var(--bg-soft);
+  padding: 20px 16px;
+  border-radius: var(--radius);
+  margin: 24px 0 40px;
+}
+
+.trust-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trust-item strong {
+  color: var(--brand);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.trust-item span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.intake {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+}
+
+.intake h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: var(--brand);
+}
+
+.intake > p {
+  margin: 0 0 24px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+form { display: flex; flex-direction: column; gap: 16px; }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+label > span:first-child { color: var(--text); }
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+textarea {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--brand-2);
+  box-shadow: 0 0 0 3px rgba(26, 68, 128, 0.12);
+}
+
+textarea { resize: vertical; min-height: 70px; }
+
+label.checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+label.checkbox input { margin-top: 3px; min-width: 16px; min-height: 16px; }
+
+label.checkbox.required-consent {
+  background: var(--bg-soft);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.submit-cta { width: 100%; margin-top: 8px; padding: 18px; font-size: 18px; }
+
+.disclaimer { font-size: 11px; line-height: 1.4; }
+
+.thanks {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.thanks h2 { color: var(--brand); margin: 0 0 12px; }
+.thanks a { color: var(--accent); font-weight: 700; }
+
+footer {
+  background: var(--bg-soft);
+  padding: 24px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (min-width: 640px) {
+  .hero h1 { font-size: 40px; }
+  .hero .lede { font-size: 19px; }
+  .intake { padding: 36px 32px; }
+}

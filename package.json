@@ -1,0 +1,36 @@
+{
+  "name": "ocinjured-engine",
+  "version": "0.1.0",
+  "description": "Consumer-facing PI lead-generation brand for Orange County. Hyperlocal AI-personalized ads.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/orchestrator.ts",
+    "build": "tsc",
+    "orchestrator": "tsx src/orchestrator.ts",
+    "scrape:oc-register": "tsx src/scrapers/oc-register.ts",
+    "scrape:ktla": "tsx src/scrapers/ktla.ts",
+    "scrape:patch": "tsx src/scrapers/patch-oc.ts",
+    "scrape:oc-fire": "tsx src/scrapers/oc-fire-twitter.ts",
+    "campaign:create": "tsx src/ad-engine/cli.ts",
+    "deploy:landing": "wrangler pages deploy src/landing-page --project-name=ocinjured",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "facebook-nodejs-business-sdk": "^21.0.0",
+    "playwright": "^1.49.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^3.90.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

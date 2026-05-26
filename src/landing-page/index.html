@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a2540" />
+  <title>OCInjured — Free Help After an Accident in Orange County</title>
+  <meta name="description" content="Hurt in Orange County? Get free, no-obligation answers about your accident. We pick up 24/7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">OCInjured<span class="tld">.com</span></div>
+    <a href="tel:+19495550100" class="phone-cta" aria-label="Call now for free help">📞 Call 24/7</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hurt in an accident in Orange County?</h1>
+      <p class="lede">Get free, no-obligation answers right now. We pick up 24/7. No pressure, no fees unless you decide to move forward.</p>
+      <a href="#intake" class="primary-cta">Get Free Answers →</a>
+      <p class="microcopy">3 minutes. Mobile-friendly. No spam.</p>
+    </section>
+
+    <section class="trust">
+      <div class="trust-item"><strong>24/7</strong><span>We pick up</span></div>
+      <div class="trust-item"><strong>FREE</strong><span>No obligation</span></div>
+      <div class="trust-item"><strong>OC</strong><span>Local team</span></div>
+      <div class="trust-item"><strong>$0</strong><span>Unless you win</span></div>
+    </section>
+
+    <section id="intake" class="intake">
+      <h2>Tell us what happened</h2>
+      <p>Takes about 3 minutes. We'll call you back within 60 seconds if you'd like.</p>
+      <form id="intake-form" novalidate>
+        <label>
+          <span>Your name</span>
+          <input type="text" name="first_name" autocomplete="given-name" required placeholder="First name" />
+        </label>
+
+        <label>
+          <span>Phone number</span>
+          <input type="tel" name="phone" autocomplete="tel" required placeholder="(949) 555-0100" inputmode="tel" />
+        </label>
+
+        <label>
+          <span>What happened? (a sentence or two is fine)</span>
+          <textarea name="incident_description" rows="3" required placeholder="e.g. I got rear-ended on the 405 near Irvine on Tuesday by a delivery truck"></textarea>
+        </label>
+
+        <label>
+          <span>When did it happen?</span>
+          <input type="date" name="incident_date" />
+        </label>
+
+        <label>
+          <span>Were you hurt?</span>
+          <textarea name="injuries_described" rows="2" placeholder="e.g. neck and back pain, went to the ER"></textarea>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" name="treated_by_doctor" value="true" />
+          <span>I've seen a doctor about my injuries (or plan to)</span>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" name="has_attorney" value="true" />
+          <span>I already have an attorney for this case</span>
+        </label>
+
+        <label class="checkbox required-consent">
+          <input type="checkbox" name="consent_to_contact" value="true" required />
+          <span>OK to contact me by phone, text, or email about my potential case. I understand standard message rates may apply and consent is not a condition of any service.</span>
+        </label>
+
+        <button type="submit" class="primary-cta submit-cta">Get my free answers</button>
+        <p class="microcopy disclaimer">OCInjured connects you with personal injury professionals. We are not a law firm and do not provide legal advice. Submitting this form does not create an attorney-client relationship.</p>
+      </form>
+
+      <div id="thanks" class="thanks" hidden>
+        <h2>Got it — we'll be in touch shortly.</h2>
+        <p>If it's urgent, call <a href="tel:+19495550100">(949) 555-0100</a> now. We're available 24/7.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>OCInjured is a service of CaseDelta. © <span id="year"></span>. Orange County, California.</p>
+  </footer>
+
+  <script src="intake.js" type="module"></script>
+</body>
+</html>
