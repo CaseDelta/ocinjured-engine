@@ -1,6 +1,6 @@
 import { getSupabase } from '../db/client.js';
 import { generateCreatives } from './creative-gen.js';
-import { spinCampaign, activateCampaign } from './meta-api.js';
+import { spinCampaign } from './meta-api.js';
 
 const args = parseArgs(process.argv.slice(2));
 const incidentId = args['incident-id'];

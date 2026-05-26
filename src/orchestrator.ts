@@ -20,10 +20,10 @@ async function main() {
   console.log(`[orchestrator] starting at ${startedAt.toISOString()}`);
 
   const [reg, ktla, patch, ocfire] = await Promise.all([
-    scrapeOcRegister().catch(safeFail('oc-register')),
-    scrapeKtla().catch(safeFail('ktla')),
-    scrapePatch().catch(safeFail('patch-oc')),
-    scrapeOcFire().catch(safeFail('oc-fire-twitter')),
+    scrapeOcRegister().catch(safeFail<Partial<Incident>>('oc-register')),
+    scrapeKtla().catch(safeFail<Partial<Incident>>('ktla')),
+    scrapePatch().catch(safeFail<Partial<Incident>>('patch-oc')),
+    scrapeOcFire().catch(safeFail<Partial<Incident>>('oc-fire-twitter')),
   ]);
 
   const all: Partial<Incident>[] = [...reg, ...ktla, ...patch, ...ocfire];

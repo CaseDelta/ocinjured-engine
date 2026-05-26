@@ -107,9 +107,27 @@ ocinjured-engine/
 ```bash
 cd /Users/camrenhall/Documents/CaseDelta/Github/ocinjured-engine
 npm install
+npx playwright install chromium
 cp .env.example .env
 # Fill in .env with Anthropic key, Supabase URL/key, Meta Marketing API token
 npm run dev
+```
+
+### One-time DB setup (already done for QA — Supabase `eawdsvit...`)
+```bash
+# 1. Apply schema (creates ocinjured.{incidents,campaigns,leads} + daily_metrics view)
+psql "$QA_DB_CONNECTION_STRING" -f src/db/schema.sql
+
+# 2. Expose ocinjured schema in PostgREST (REQUIRED — Supabase only exposes `public` by default)
+psql "$QA_DB_CONNECTION_STRING" <<SQL
+ALTER ROLE authenticator SET pgrst.db_schemas TO 'public,graphql_public,scribe,ocinjured';
+GRANT USAGE ON SCHEMA ocinjured TO anon, authenticated, service_role;
+GRANT ALL ON ALL TABLES IN SCHEMA ocinjured TO anon, authenticated, service_role;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA ocinjured TO anon, authenticated, service_role;
+ALTER DEFAULT PRIVILEGES IN SCHEMA ocinjured GRANT ALL ON TABLES TO anon, authenticated, service_role;
+NOTIFY pgrst, 'reload config';
+NOTIFY pgrst, 'reload schema';
+SQL
 ```
 
 ### Run a scraper

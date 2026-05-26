@@ -1,8 +1,9 @@
+// @ts-expect-error — facebook-nodejs-business-sdk ships no types
 import bizSdk from 'facebook-nodejs-business-sdk';
 import { Incident, Campaign } from '../intake/schema.js';
 import { AdCreative } from './creative-gen.js';
 
-const { FacebookAdsApi, AdAccount, Campaign: MetaCampaign, AdSet, AdCreative: MetaAdCreative, Ad } = bizSdk;
+const { FacebookAdsApi, AdAccount, Campaign: MetaCampaign } = bizSdk;
 
 export interface CampaignSpinResult {
   meta_campaign_id: string;
