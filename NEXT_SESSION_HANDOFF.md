@@ -25,7 +25,7 @@ Everything else is in place: landing page, form, spam filter, Slack alerts, Pixe
 | Meta business | Using existing CaseDelta BM (`1523525049382179`) — permission-blocked | New **OCInjured BM** (`1309589517813873`), user is full admin |
 | Meta ad account | `act_238417253` (CaseDelta law-firm; couldn't add OCInjured Page) | New **`act_120247798467300529`** (clean, OCInjured-owned) |
 | Facebook Page | None (ads would have said "Sponsored by CaseDelta") | New **OCInjured Page** (`61590225939905`), category "Local service" |
-| Meta Pixel | Empty placeholder in landing page | **`1835421077863221`** — live and firing PageView + Lead events |
+| Meta Pixel | Empty placeholder in landing page | **`949501294563991`** — live and firing PageView + Lead events |
 | Vercel deploys | Stuck in `BLOCKED` (git author email mismatch) | Working — repo-local `user.email = camren@casedelta.com` |
 | Intake form | 5 required + 3 optional fields, ~3 min to submit | **4 fields total** (name, phone, what-happened, consent), ~30 sec |
 | Spam protection | None | Honeypot + 20/hr IP rate-limit + GPT-4o-mini classifier |
@@ -81,7 +81,7 @@ For MVP, run **one wide-funnel campaign** ("car accident in OC?") that the AI Me
 - **Business Portfolio**: `1309589517813873` ("OCInjured"), email verified to `camren@casedelta.com`
 - **Ad account**: `act_120247798467300529` (USD, America/Chicago, NO payment method yet)
 - **Facebook Page**: `61590225939905` (category: Local service)
-- **Meta Pixel**: `1835421077863221` (firing PageView; will fire Lead on form-submit)
+- **Meta Pixel**: `949501294563991` (firing PageView; will fire Lead on form-submit)
 - **System user**: "Camren Hall" (`61590337145367`), Admin role, Page + Ad account assigned, **token NOT generated** (requires app registration first; Phase 2 task)
 
 ---
@@ -205,7 +205,7 @@ All values are in `.env` (gitignored). Vercel production has its own copies — 
 - `META_BUSINESS_ID=1309589517813873`
 - `META_AD_ACCOUNT_ID=act_120247798467300529`
 - `META_PAGE_ID=61590225939905`
-- `META_PIXEL_ID=1835421077863221`
+- `META_PIXEL_ID=949501294563991`
 - `META_APP_ID=1871334880162905` (still CaseDelta app — needs swap when we register an OCInjured app)
 - `META_APP_SECRET=...` (still CaseDelta app secret)
 - `META_ACCESS_TOKEN=...` (STALE — was from old CaseDelta BM, not valid for new ad account. Regenerate when needed via Phase 2 app-registration flow)
