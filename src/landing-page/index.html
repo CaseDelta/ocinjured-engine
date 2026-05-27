@@ -10,11 +10,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <script>window.OCINJURED_PIXEL_ID = '';</script>
+  <script>
+    (function () {
+      var id = window.OCINJURED_PIXEL_ID;
+      if (!id) return;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', id);
+      fbq('track', 'PageView');
+    })();
+  </script>
 </head>
 <body>
   <header>
     <div class="brand">OCInjured<span class="tld">.com</span></div>
-    <a href="tel:+19495550100" class="phone-cta" aria-label="Call now for free help">📞 Call 24/7</a>
   </header>
 
   <main>
@@ -82,7 +98,7 @@
 
       <div id="thanks" class="thanks" hidden>
         <h2>Got it — we'll be in touch shortly.</h2>
-        <p>If it's urgent, call <a href="tel:+19495550100">(949) 555-0100</a> now. We're available 24/7.</p>
+        <p>We'll reach out by phone or text within the hour. Watch for a call from a local Orange County number.</p>
       </div>
     </section>
   </main>

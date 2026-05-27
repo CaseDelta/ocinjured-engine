@@ -61,10 +61,16 @@ form.addEventListener('submit', async (e) => {
     form.hidden = true;
     thanks.hidden = false;
     thanks.scrollIntoView({ behavior: 'smooth' });
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', {
+        content_category: payload.vertical,
+        content_name: 'intake_form_submit',
+      });
+    }
   } catch (err) {
     btn.disabled = false;
     btn.textContent = 'Get my free answers';
-    alert('Something went wrong. Please call (949) 555-0100 directly or try again.');
+    alert('Something went wrong. Please try again in a moment.');
     console.error(err);
   }
 });
