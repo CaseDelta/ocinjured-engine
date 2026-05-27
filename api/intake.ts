@@ -1,14 +1,18 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { createHmac } from 'node:crypto';
 
-// Vercel edge function (Node runtime) that proxies intake form submissions
-// from ocinjured.com → CaseDelta `/v1/internal/leads/ingest`, adding the
-// HMAC-SHA256 signature server-side so the secret never touches the browser.
+// Vercel function that proxies intake form submissions from ocinjured.com
+// → CaseDelta `/v1/internal/leads/ingest`, adding the HMAC-SHA256
+// signature server-side so the secret never touches the browser.
+//
+// CaseDelta is the source of truth: it runs qualification scoring, writes
+// to ocinjured.leads, and owns the API surface. This function is a thin
+// edge proxy that handles CORS + Origin allowlist + HMAC signing.
 
 const ALLOWED_ORIGINS = new Set([
   'https://ocinjured.com',
   'https://www.ocinjured.com',
-  // preview deploys
+  'https://ocinjured.vercel.app',
   'https://ocinjured-engine.vercel.app',
 ]);
 
