@@ -32,14 +32,15 @@ form.addEventListener('submit', async (e) => {
     first_name: (fd.get('first_name') ?? '').toString().trim(),
     phone: (fd.get('phone') ?? '').toString().trim(),
     incident_description: (fd.get('incident_description') ?? '').toString().trim(),
-    incident_date: (fd.get('incident_date') ?? '').toString() || null,
-    injuries_described: (fd.get('injuries_described') ?? '').toString().trim() || null,
-    treated_by_doctor: fd.get('treated_by_doctor') === 'true',
-    has_attorney: fd.get('has_attorney') === 'true',
+    incident_date: null,
+    injuries_described: null,
+    treated_by_doctor: false,
+    has_attorney: false,
     consent_to_contact: fd.get('consent_to_contact') === 'true',
     consent_captured_at: new Date().toISOString(),
     user_agent: navigator.userAgent,
     captured_at: new Date().toISOString(),
+    website: (fd.get('website') ?? '').toString(),
   };
 
   if (!payload.consent_to_contact) {

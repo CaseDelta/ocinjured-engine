@@ -38,7 +38,7 @@
       <h1>Hurt in an accident in Orange County?</h1>
       <p class="lede">Get free, no-obligation answers right now. We pick up 24/7. No pressure, no fees unless you decide to move forward.</p>
       <a href="#intake" class="primary-cta">Get Free Answers →</a>
-      <p class="microcopy">3 minutes. Mobile-friendly. No spam.</p>
+      <p class="microcopy">30 seconds. Mobile-friendly. No spam.</p>
     </section>
 
     <section class="trust">
@@ -50,7 +50,7 @@
 
     <section id="intake" class="intake">
       <h2>Tell us what happened</h2>
-      <p>Takes about 3 minutes. We'll call you back within 60 seconds if you'd like.</p>
+      <p>Takes about 30 seconds. We'll call you back shortly.</p>
       <form id="intake-form" novalidate>
         <label>
           <span>Your name</span>
@@ -63,29 +63,16 @@
         </label>
 
         <label>
-          <span>What happened? (a sentence or two is fine)</span>
-          <textarea name="incident_description" rows="3" required placeholder="e.g. I got rear-ended on the 405 near Irvine on Tuesday by a delivery truck"></textarea>
+          <span>What happened? (a sentence or two)</span>
+          <textarea name="incident_description" rows="3" required placeholder="e.g. I got rear-ended on the 405 near Irvine on Tuesday by an Amazon delivery van"></textarea>
         </label>
 
-        <label>
-          <span>When did it happen?</span>
-          <input type="date" name="incident_date" />
-        </label>
-
-        <label>
-          <span>Were you hurt?</span>
-          <textarea name="injuries_described" rows="2" placeholder="e.g. neck and back pain, went to the ER"></textarea>
-        </label>
-
-        <label class="checkbox">
-          <input type="checkbox" name="treated_by_doctor" value="true" />
-          <span>I've seen a doctor about my injuries (or plan to)</span>
-        </label>
-
-        <label class="checkbox">
-          <input type="checkbox" name="has_attorney" value="true" />
-          <span>I already have an attorney for this case</span>
-        </label>
+        <div class="hp-field" aria-hidden="true">
+          <label>
+            <span>Website</span>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
 
         <label class="checkbox required-consent">
           <input type="checkbox" name="consent_to_contact" value="true" required />
