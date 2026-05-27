@@ -13,7 +13,8 @@
     "scrape:patch": "tsx src/scrapers/patch-oc.ts",
     "scrape:oc-fire": "tsx src/scrapers/oc-fire-twitter.ts",
     "campaign:create": "tsx src/ad-engine/cli.ts",
-    "deploy:landing": "wrangler pages deploy src/landing-page --project-name=ocinjured",
+    "deploy:landing": "vercel deploy --prod",
+    "deploy:preview": "vercel deploy",
     "db:migrate": "tsx src/db/migrate.ts",
     "typecheck": "tsc --noEmit"
   },
@@ -26,9 +27,9 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
+    "@vercel/node": "^5.1.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0",
-    "wrangler": "^3.90.0"
+    "typescript": "^5.7.0"
   },
   "engines": {
     "node": ">=20.0.0"
