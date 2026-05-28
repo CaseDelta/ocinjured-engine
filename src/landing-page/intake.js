@@ -63,8 +63,8 @@ form.addEventListener('submit', async (e) => {
     thanks.hidden = false;
     thanks.scrollIntoView({ behavior: 'smooth' });
     if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
-      fbq('track', 'Contact');
+      fbq('track', 'Lead', { content_name: 'intake_form_submit' });
+      fbq('track', 'Contact', { content_name: 'intake_form_submit' });
     }
     const newUrl = new URL(window.location.href);
     newUrl.searchParams.set('lead_submitted', 'true');
