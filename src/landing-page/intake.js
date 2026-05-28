@@ -68,6 +68,10 @@ form.addEventListener('submit', async (e) => {
         content_name: 'intake_form_submit',
       });
     }
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('lead_submitted', 'true');
+    history.replaceState(null, '', newUrl.toString());
+    if (typeof fbq === 'function') fbq('track', 'PageView');
   } catch (err) {
     btn.disabled = false;
     btn.textContent = 'Get my free answers';
